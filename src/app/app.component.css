@@ -1,0 +1,8 @@
+a{
+    color: white;
+    padding: 10px;
+}
+a:hover{
+    color: black;
+    padding: 5px;
+}

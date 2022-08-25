@@ -1,0 +1,24 @@
+<table class="table table-bordered table-primary">
+    <thead>
+        <th>id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>description</th>
+        <th>category</th>
+        <th>image</th>
+        <th>rating</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of Emplist">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.image}}</td>
+            <td>{{item.rating | json}}</td>
+            <td> <a routerLink="Edit/{{item.id}}" class="btn btn-primary">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+
