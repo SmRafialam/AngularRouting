@@ -13,5 +13,21 @@ export class MasterService {
   GetAllEmployee(){
     return this.http.get(this.apiurl);
   }
+  isLoggedIn(){
+    return localStorage.getItem("username")!=null;
+  }
 
-}
+  haveRoleaccess(menuname:any){
+    const role = localStorage.getItem("role");
+    if(role == 'admin'){
+      return true;
+    }
+    else{
+    if(menuname == 'contact'){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+}}

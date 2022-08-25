@@ -5,11 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {path:"admin",
-  children:[{path:"list",component:ListComponent},
-  {path:"login",component:LoginComponent}]},
-  
-
+  {path:"list",component:ListComponent},
+  {path:"login",component:LoginComponent},
 ];
 
 @NgModule({
