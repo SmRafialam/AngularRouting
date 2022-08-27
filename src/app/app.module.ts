@@ -13,6 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { FormsModule } from '@angular/forms';
+import { PopupComponent } from './popup/popup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,7 @@ import { UserModule } from './user/user.module';
     EmplistComponent,
     EmpaddComponent,
     ErrorComponent,
+    PopupComponent,
    
     
   ],
@@ -33,6 +40,11 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule
+    
     
   ],
   providers: [],

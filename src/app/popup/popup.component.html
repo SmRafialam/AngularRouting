@@ -1,0 +1,78 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create New Record</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+     <form #empform="ngForm" (submit)="saveEmployee(empform.value)">
+
+        <div class="mb-3">
+          <label>id</label>
+          <div class="input-group">
+            <input name="id" required class="form-control" #id="ngModel" ngModel>
+          </div>
+          <span *ngIf="id.invalid" class="text-danger">Enter valid id.</span>
+
+        </div>
+        <div class="mb-3">
+            <label>title</label>
+            <div class="input-group">
+              <input name="title" required class="form-control" #title="ngModel" ngModel>
+            </div>
+            <span *ngIf="title.invalid" class="text-danger">Enter valid title.</span>
+          </div>
+          <div class="mb-3">
+            <label>price</label>
+            <div class="input-group">
+              <input name="price" class="form-control" #price="ngModel" ngModel>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>description</label>
+            <div class="input-group">
+              <input name="description" class="form-control" #description="ngModel" ngModel>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>category</label>
+            <div class="input-group">
+              <select name="category" class="form-control" #category="ngModel" ngModel>
+                <option value="">Select category</option>
+                <option value="">jewelery</option>
+                <option value="">necklace</option>
+              </select>  
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>image</label>
+            <div class="input-group">
+              <input name="image" class="form-control" #image="ngModel" ngModel>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>rating</label>
+            <div class="input-group">
+              <input name="rating" class="form-control" #rating="ngModel" ngModel>
+            </div>
+          </div>
+        
+        
+        <div *ngIf=alertrequired>
+            <ngb-alert [type]="alerttype">{{alertmessage}}</ngb-alert>
+        </div>
+        <div *ngIf=pgbarrequired>
+            <p><ngb-progressbar type="success" [value]="progressdata" [striped]="true"></ngb-progressbar></p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-dark">Save</button>
+          </div>
+    </form>
+    </div>
+
+  </ng-template>
+  
+  <button ngbTooltip="create new record" class="btn btn-primary my-2 mx-5" (click)="open(content)">Add New</button>
+  
+  <hr>
+  
+  <pre>{{ closeResult }}</pre>

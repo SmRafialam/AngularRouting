@@ -13,6 +13,9 @@ export class MasterService {
   GetAllEmployee(){
     return this.http.get(this.apiurl);
   }
+  saveEmployee(inputdata:any){
+    return this.http.post(this.apiurl,inputdata);
+  }
   isLoggedIn(){
     return localStorage.getItem("username")!=null;
   }
